@@ -4,6 +4,7 @@
   import Vue from 'vue';
   import App from './App.vue';
   import router from './router';
+  import store from '../store'
   <%_ if (options['ui-framework'] === 'element-ui') { _%>
   import './vendor/element';
   <%_ } else if (options['ui-framework'] === 'iview') { _%>
@@ -19,6 +20,7 @@
   new Vue({
     el: '#app',
     router,
+	store,
     // use Runtime-only
     // https://vuejs.org/v2/guide/installation.html
     render: (h) => h(App)
