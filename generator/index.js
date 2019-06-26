@@ -27,6 +27,14 @@ module.exports = (api, options, rootOptions) => {
       "vuex-persistedstate": "^2.5.4"
     },
   });
+
+  // 删除 vue-cli3 默认目录
+  api.render(files => {
+    Object.keys(files)
+      .filter(path => path.startsWith('src/') || path.startsWith('public/'))
+      .forEach(path => delete files[path]);
+  });
+
   // postcss
   api.extendPackage({
     postcss: {
@@ -77,12 +85,7 @@ module.exports = (api, options, rootOptions) => {
   } else if (options['ui-framework'] === 'hui') {
     require('./hui.js')(api, options);
   }
-  // 删除 vue-cli3 默认目录
-  api.render(files => {
-    Object.keys(files)
-      .filter(path => path.startsWith('src/') || path.startsWith('public/'))
-      .forEach(path => delete files[path]);
-  });
+
   // 公共基础目录和文件
   api.render('./template');
   // 屏蔽 generator 之后的文件写入操作
