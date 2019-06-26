@@ -8,7 +8,7 @@ module.exports = (api, options, rootOptions) => {
       "lint": "vue-cli-service lint"
     },
     dependencies: {
-      "animate.css": "^3.7.2",
+      // "animate.css": "^3.7.2",
       "axios": "^0.19.0",
       "vue": "^2.6.10",
       "vue-router": "^3.0.3",
@@ -44,14 +44,6 @@ module.exports = (api, options, rootOptions) => {
       }
     });
   }
-  // 安装 vuex
-  if (options.vuerouter) {
-    api.extendPackage({
-      dependencies: {
-        "vue-router": "^3.0.3",
-      }
-    });
-  }
   // application 应用类型为 mobile
   if (options.application === 'mobile') {
     api.extendPackage({
@@ -66,7 +58,7 @@ module.exports = (api, options, rootOptions) => {
           'postcss-pxtorem': {
             rootValue: 37.5,
             unitPrecision: 5,
-            propList: ['height', 'width', 'padding', 'margin', 'top', 'left', 'right', 'bottom'],
+            propList: ['*'],
             selectorBlackList: [],
             replace: true,
             mediaQuery: false,

@@ -46,6 +46,6 @@
     "eslintConfig": {}
   },
   "router": true,
-  "vuex": true,
+  "vuex": false,
   "routerHistoryMode": false
 }
