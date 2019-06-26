@@ -1,6 +1,9 @@
 {
   "useConfigFiles": true,
-  "cssPreprocessor": "scss",
+  "cssPreprocessor": "sass",
+  "router": true,
+  "vuex": false,
+  "routerHistoryMode": false,
   "plugins": {
     "@vue/cli-plugin-babel": {
       "version": "^3.0.0"
@@ -44,8 +47,5 @@
     },
     "postcss": {},
     "eslintConfig": {}
-  },
-  "router": true,
-  "vuex": false,
-  "routerHistoryMode": false
+  }
 }

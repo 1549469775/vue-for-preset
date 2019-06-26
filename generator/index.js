@@ -20,9 +20,9 @@ module.exports = (api, options, rootOptions) => {
       "babel-eslint": "^10.0.1",
       "eslint": "^5.16.0",
       "eslint-plugin-vue": "^5.0.0",
-      "node-sass": "^4.9.0",
+      // "node-sass": "^4.9.0",
       "normalize.css": "^8.0.1",
-      "sass-loader": "^7.1.0",
+      // "sass-loader": "^7.1.0",
       "vue-template-compiler": "^2.6.10",
       "vuex-persistedstate": "^2.5.4"
     },
