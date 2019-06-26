@@ -5,6 +5,6 @@ module.exports = (api, options, rootOptions) => {
     }
   });
   api.render('../ui/iview');
-  api.injectImports('src/vendor/index.js', `import './iview.js'`);
+  api.injectImports('src/vendor/iview.js', `import './iview.js'`);
   api.onCreateComplete(() => {});
 };

@@ -5,6 +5,6 @@ module.exports = (api, options, rootOptions) => {
     }
   });
   api.render('../ui/hui');
-  api.injectImports('src/vendor/index.js', `import './hui.js'`);
+  api.injectImports('src/vendor/hui.js', `import './hui.js'`);
   api.onCreateComplete(() => {});
 };
