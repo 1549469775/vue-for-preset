@@ -1,5 +1,12 @@
 module.exports = (api, options, rootOptions) => {
   const utils = require('./utils')(api);
+  // 删除 vue-cli3 默认目录
+  api.render(files => {
+    Object.keys(files)
+      .filter(path => path.startsWith('src/') || path.startsWith('public/'))
+      .forEach(path => delete files[path]);
+  });
+
   // 安装一些基础公共库
   api.extendPackage({
     scripts: {
@@ -27,14 +34,28 @@ module.exports = (api, options, rootOptions) => {
       "vuex-persistedstate": "^2.5.4"
     },
   });
+  // 支持采用TinyPNG node.js API 进行在线压缩.jpg或.png格式图片，并且转换Webp格式文件
+  // 支持断网处理
+  // SVG 雪碧图：vue-svgicon
+  // 移动 web 的适配方案：引入了 postcss-pxtorem 及 lib-flexible，可以自由地用 px 去开发
+  // 常用的 js 工具类： cloud-utils
+  // 引用 style-resources-loader：全局注入相关的less文件，如通用的 variable及 mixins等
 
-  // 删除 vue-cli3 默认目录
-  api.render(files => {
-    Object.keys(files)
-      .filter(path => path.startsWith('src/') || path.startsWith('public/'))
-      .forEach(path => delete files[path]);
+  // "babel-plugin-import": "^1.12.0",
+  api.extendPackage({
+    dependencies: {
+      "babel-plugin-import": "^1.12.0",
+    },
+    babel: {
+      plugins: [
+        ['import', {
+          libraryName: 'vant',
+          libraryDirectory: 'es',
+          style: true
+        }, 'vant']
+      ]
+    }
   });
-
   // postcss
   api.extendPackage({
     postcss: {
@@ -75,6 +96,9 @@ module.exports = (api, options, rootOptions) => {
         }
       }
     });
+  }
+  if (options['mobile-ui'] === 'vant') {
+    require('./vant.js')(api, options);
   }
   if (options['ui-framework'] === 'element-ui') {
     require('./element.js')(api, options);
