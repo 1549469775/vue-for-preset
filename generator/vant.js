@@ -4,7 +4,18 @@ module.exports = (api, options, rootOptions) => {
       "vant": "^2.0.3",
     }
   });
-  api.render('../ui/vant');
-  api.injectImports('src/vendor/vant.js', `import './vant.js'`);
-  api.onCreateComplete(() => {});
+  api.extendPackage({
+    dependencies: {
+      "babel-plugin-import": "^1.12.0",
+    },
+    babel: {
+      plugins: [
+        ['import', {
+          libraryName: 'vant',
+          libraryDirectory: 'es',
+          style: true
+        }, 'vant']
+      ]
+    }
+  });
 };

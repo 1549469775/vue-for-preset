@@ -44,20 +44,7 @@ module.exports = (api, options, rootOptions) => {
   // 引用 style-resources-loader：全局注入相关的less文件，如通用的 variable及 mixins等
 
   // "babel-plugin-import": "^1.12.0",
-  api.extendPackage({
-    dependencies: {
-      "babel-plugin-import": "^1.12.0",
-    },
-    babel: {
-      plugins: [
-        ['import', {
-          libraryName: 'vant',
-          libraryDirectory: 'es',
-          style: true
-        }, 'vant']
-      ]
-    }
-  });
+
   // postcss
   api.extendPackage({
     postcss: {
