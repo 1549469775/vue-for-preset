@@ -5,6 +5,9 @@
   import App from './App.vue';
   import router from './router';
   import store from '../store'
+  <%_ if (options['mobile-ui'] === 'vant') { _%>
+  import './vendor/vant';
+  <%_ } _%>
   <%_ if (options['ui-framework'] === 'element-ui') { _%>
   import './vendor/element';
   <%_ } else if (options['ui-framework'] === 'iview') { _%>
