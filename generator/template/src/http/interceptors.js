@@ -1,5 +1,6 @@
 import axios from 'axios';
 import store from '../store/index'
+
 axios.interceptors.request.use(config => {
   if (!config.headers['Content-Type']) {
     config.headers = {

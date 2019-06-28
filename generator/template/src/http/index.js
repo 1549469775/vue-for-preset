@@ -1,13 +1,15 @@
 import axios from 'axios';
 import './interceptors'
-axios.defaults.timeout = 5000;
-axios.defaults.baseURL = 'http://192.168.1.118:8087/qianjiaxi/api';
+import Vue from 'vue';
+import Urls from './urls'
+import config from '../config/config.js'
+
+axios.defaults.timeout = config.timeout;
+axios.defaults.baseURL = config.BASEURL;
+
+
 // 允许携带Cooikes
 // axios.defaults.withCredentials = true  
-import {
-  request
-} from "./request"
-
-export default {
-  request,
-}
+Object.keys(Urls).forEach(v => {
+  Vue.prototype.$request[v] = Urls[v]
+})

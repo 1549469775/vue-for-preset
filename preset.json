@@ -1,24 +1,12 @@
 {
-  "useConfigFiles": true,
+  "useConfigFiles": false,
   "cssPreprocessor": "sass",
   "router": true,
   "vuex": false,
   "routerHistoryMode": false,
-  "plugins": {
-    "@vue/cli-plugin-babel": {
-      "version": "^3.0.0"
-    },
-    "@vue/cli-plugin-eslint": {
-      "version": "^3.0.0",
-
-      "config": "recommended",
-
-      "lintOn": ["save", "commit"]
-    }
-  },
   "configs": {
     "vue": {
-      "baseUrl": "/",
+      "publicPath": "/",
       "outputDir": "dist",
       "assetsDir": "static",
       "filenameHashing": true,

@@ -86,9 +86,9 @@ module.exports = (api, options, rootOptions) => {
       }
     });
   }
-  if (options['mobile-ui'] === 'vant') {
-    require('./vant.js')(api, options);
-  }
+  // if (options['mobile-ui'] === 'vant') {
+  require('./vant.js')(api, options);
+  // }
   if (options['ui-framework'] === 'element-ui') {
     require('./element.js')(api, options);
   } else if (options['ui-framework'] === 'iview') {
