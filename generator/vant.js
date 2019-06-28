@@ -5,7 +5,7 @@ module.exports = (api, options, rootOptions) => {
     }
   });
   api.extendPackage({
-    dependencies: {
+    devDependencies: {
       "babel-plugin-import": "^1.12.0",
     },
     babel: {
