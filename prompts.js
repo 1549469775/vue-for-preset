@@ -18,8 +18,7 @@ module.exports = [{
       }
     ],
     default: 'mobile'
-  },
-  {
+  }, {
     name: 'ui-framework',
     type: 'list',
     message: 'choice UI Framework(default:none)',
@@ -46,8 +45,8 @@ module.exports = [{
     ],
     when: answers => answers.application === 'pc',
     default: 'none'
-  },
-  // {
+  }
+  // ,{
   //   name: 'mobile-ui',
   //   type: 'list',
   //   message: 'choice UI Framework(default:none)',
