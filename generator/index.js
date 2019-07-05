@@ -9,7 +9,7 @@ module.exports = (api, options, rootOptions) => {
   // 公共基础目录和文件
   // api.render('./template');
   api.extendPackage({
-    eslint: {
+    "eslintrc": {
       root: true,
       env: {
         node: true
