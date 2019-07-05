@@ -39,6 +39,7 @@ module.exports = {
         @import "@/assets/styles/_index.scss";
       `
       },
+	  <%_ if (options['mobile-ui'] === 'vant') { _%>
       // 为了改变主题，多安装了less,less-loader
       less: {
         modifyVars: {
@@ -48,6 +49,7 @@ module.exports = {
           'text-color': '#111'
         }
       }
+	  <%_ } _%>
     },
     // 启用 CSS modules for all css / pre-processor files.
     modules: false,

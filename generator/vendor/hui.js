@@ -4,7 +4,7 @@ module.exports = (api, options, rootOptions) => {
       'h_ui': '*'
     }
   });
-  api.render('../ui/hui');
+  api.render('../../ui/hui');
   api.injectImports('src/vendor/hui.js', `import './hui.js'`);
   api.onCreateComplete(() => {});
 };

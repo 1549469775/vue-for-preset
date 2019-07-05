@@ -4,7 +4,7 @@ module.exports = (api, options, rootOptions) => {
       iview: '^3.4.1'
     }
   });
-  api.render('../ui/iview');
+  api.render('../../ui/iview');
   api.injectImports('src/vendor/iview.js', `import './iview.js'`);
   api.onCreateComplete(() => {});
 };

@@ -4,7 +4,7 @@ module.exports = (api, options, rootOptions) => {
       'element-ui': '^2.8.2'
     }
   });
-  api.render('../ui/element');
+  api.render('../../ui/element');
   api.injectImports('src/vendor/element.js', `import './element.js'`);
   api.onCreateComplete(() => {});
 };

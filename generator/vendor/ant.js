@@ -4,7 +4,7 @@ module.exports = (api, options, rootOptions) => {
       'ant-design-vue': '^1.3.8'
     }
   });
-  api.render('../ui/ant-design-vue');
+  api.render('../../ui/ant-design-vue');
   api.injectImports('src/vendor/ant.js', `import './ant.js'`);
   api.onCreateComplete(() => {});
 };
