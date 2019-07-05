@@ -5,8 +5,6 @@
   import router from '@router';
   // vuex分离
   import store from '@store'
-  //组件分离
-  import '@vendor/index.js'
   // 网络请求分离
   import request from '@http/index.js'
   Vue.prototype.$request = request;
