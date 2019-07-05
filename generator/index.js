@@ -8,7 +8,25 @@ module.exports = (api, options, rootOptions) => {
   });
   // 公共基础目录和文件
   // api.render('./template');
-
+  api.extendPackage({
+    eslint: {
+      root: true,
+      env: {
+        node: true
+      },
+      'extends': [
+        'plugin:vue/essential',
+        'eslint:recommended'
+      ],
+      rules: {
+        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+      },
+      parserOptions: {
+        parser: 'babel-eslint'
+      }
+    }
+  });
   require('./common.js')(api, options, rootOptions);
   if (options.application === 'mobile') {
     api.render('./mobile');
