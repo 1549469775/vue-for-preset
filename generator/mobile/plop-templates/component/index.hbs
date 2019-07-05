@@ -1,0 +1,36 @@
+{{#if script}}
+<script>
+  export default {
+    name: '{{name }}',
+    props: {},
+    mixins: [],
+    components: {},
+    data() {
+      return {};
+    },
+    computed: {},
+    watch: {},
+    created() {
+    },
+    mounted() {
+    },
+    destroyed() {
+    },
+    methods: {}
+  };
+</script>
+{{/if}}
+{{#if template}}
+<template>
+  <div class="comp-{{ name }}">
+    {{ name }} 组件
+  </div>
+</template>
+{{/if}}
+
+
+{{#if style}}
+<style lang="scss" scoped>
+  @import "./style.scss";
+</style>
+{{/if}}

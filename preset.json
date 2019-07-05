@@ -1,7 +1,3 @@
 {
-  "useConfigFiles": true,
-  "cssPreprocessor": "sass",
-  "router": true,
-  "vuex": false,
-  "routerHistoryMode": false
+  "useConfigFiles": true
 }
