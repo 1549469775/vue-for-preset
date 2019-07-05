@@ -9,3 +9,6 @@ npm install -g @vue/cli
 vue create --preset 1549469775/vue-for-preset vue-project
 ### or
 vue create --preset direct:https://github.com/1549469775/vue-for-preset.git vue-project --clone
+
+V1.0.0
+移动端模板引擎雏形
