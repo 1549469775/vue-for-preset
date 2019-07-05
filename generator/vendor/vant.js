@@ -18,4 +18,7 @@ module.exports = (api, options, rootOptions) => {
       ]
     }
   });
+  api.render('../../ui/vant');
+  api.injectImports('src/vendor/vant.js', `import './vant.js'`);
+  api.onCreateComplete(() => {});
 };
