@@ -1,4 +1,9 @@
 module.exports = [{
+  type: 'string',
+  name: 'BASE_URL',
+  message: "What's app's name?",
+  validate: value => !value ? `Can't be empty` : true
+}， {
   name: 'application',
   type: 'list',
   message: 'Choose whether your app is a PC or a mobile(default:mobile)',
