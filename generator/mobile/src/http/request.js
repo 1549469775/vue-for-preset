@@ -27,7 +27,6 @@ export function request_(type = 'GET', url, data = {}) {
       }
     }).catch((err) => {
       console.log(err);
-      Toast(err.message)
       reject(err)
     });
   })
