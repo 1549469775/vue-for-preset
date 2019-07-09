@@ -15,6 +15,7 @@ Vue.prototype.$request = request;
 import '@mixins/index.js'
 import '@directive/index.js'
 import '@filter/index.js'
+
 // 是否开发生产环境提示
 Vue.config.productionTip = process.env.NODE_ENV === 'production';
 
