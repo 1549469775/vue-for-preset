@@ -1,9 +1,13 @@
 module.exports = (api, options, rootOptions) => {
   // application 应用类型为 mobile
   api.extendPackage({
+    scripts: {
+      "new": "plop"
+    },
     dependencies: {
       'lib-flexible': '^0.3.2',
-      "vconsole": "^3.3.0"
+      "vconsole": "^3.3.0",
+      "plop": "^2.4.0",
     },
     devDependencies: {
       'postcss-pxtorem': '^4.0.1'
