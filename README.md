@@ -1,6 +1,6 @@
 # vue-for-preset
 
-## 快速开始
+自己搭建的基于Vuecli 3.0脚手架的preset预设配置
 
 ### 安装 vue-cli 3.0
 npm install -g @vue/cli

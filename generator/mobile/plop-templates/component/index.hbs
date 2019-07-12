@@ -1,14 +1,17 @@
 {{#if script}}
 <script>
-  export default {
-    name: '{{name }}',
+  const mixin = {
     props: {},
-    mixins: [],
-    components: {},
     data() {
       return {};
     },
     computed: {},
+    methods: {}
+  }
+  export default {
+    name: '{{name }}',
+    mixins: [mixin],
+    components: {},
     watch: {},
     created() {
     },
