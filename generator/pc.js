@@ -8,4 +8,13 @@ module.exports = (api, options, rootOptions) => {
   } else if (options['ui-framework'] === 'hui') {
     require('./vendor/hui.js')(api, options);
   }
+  api.extendPackage({
+    scripts: {
+      "new": "plop"
+    },
+    dependencies: {
+      "plop": "^2.4.0",
+    },
+  });
+
 }
