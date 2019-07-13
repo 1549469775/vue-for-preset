@@ -2,13 +2,9 @@ export default {
   namespaced: true,
   state: {
     // https://github.com/stackfing/vuexlearn
-    states: '',
     cachePage: [],
   },
   mutations: {
-    setTransition(state, states) {
-      state.states = states
-    },
     ADD_CACHE_PAGE(state, view) {
       if (!state.cachePage.includes(view)) {
         state.cachePage.push(view)
