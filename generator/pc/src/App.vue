@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <transition :name="animtion">
       <keep-alive :include="cachePage">
         <router-view :key="key" />
       </keep-alive>
-    </transition>
   </div>
 </template>
 <script>

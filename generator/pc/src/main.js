@@ -8,6 +8,7 @@ import store from '@store'
 // 网络请求分离
 import request from '@http/index.js'
 Vue.prototype.$request = request;
+
 // 分离混入
 import '@mixins/index.js'
 import '@directive/index.js'
