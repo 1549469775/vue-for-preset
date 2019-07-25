@@ -1,6 +1,3 @@
-  <%_ if (options['application'] === 'mobile') { _%>
-    import 'lib-flexible';
-  <%_ } _%>
 import "normalize.css"
 import Vue from 'vue';
 import App from './App.vue';
@@ -11,11 +8,22 @@ import store from '@store'
 // 网络请求分离
 import request from '@http/index.js'
 Vue.prototype.$request = request;
+
 // 分离混入
 import '@mixins/index.js'
 import '@directive/index.js'
 import '@filter/index.js'
-  import '@components/global/index.js'
+import '@components/global/index.js'
+  <%_ if (options['ui-framework'] === 'element-ui') { _%>
+    import '@vendor/element';
+  <%_ } else if (options['ui-framework'] === 'iview') { _%>
+    import '@vendor/iview';
+  <%_ } else if (options['ui-framework'] === 'ant') { _%>
+    import '@vendor/ant';
+  <%_ } else if (options['ui-framework'] === 'hui') { _%>
+    import '@vendor/hui';
+  <%_ }  _%>
+
 // 是否开发生产环境提示
 Vue.config.productionTip = process.env.NODE_ENV === 'production';
 
