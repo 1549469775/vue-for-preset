@@ -4,7 +4,8 @@ module.exports = (api, options, rootOptions) => {
     scripts: {
       "serve": "vue-cli-service serve",
       "build": "vue-cli-service build",
-      "lint": "vue-cli-service lint"
+      "lint": "vue-cli-service lint",
+      "zip": "npm run build && node build/zip.js"
     },
     dependencies: {
       // "animate.css": "^3.7.2",
@@ -28,7 +29,10 @@ module.exports = (api, options, rootOptions) => {
       "vue-template-compiler": "^2.6.10",
       "vuex-persistedstate": "^2.5.4",
       "jquery": "^3.4.1",
-      "lodash": "^4.17.11"
+      "lodash": "^4.17.11",
+      "archiver": "^3.0.3",
+      "chalk": "^2.4.2",
+      "tasksfile": "^5.1.0",
     },
   });
   // 支持采用TinyPNG node.js API 进行在线压缩.jpg或.png格式图片，并且转换Webp格式文件
