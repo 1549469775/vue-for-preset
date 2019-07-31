@@ -59,7 +59,7 @@ module.exports = [{
   ],
   when: answers => answers.application === 'mobile',
   default: 'none'
-},, {
+}, {
   name: 'translate',
   type: 'list',
   message: '是否启用过渡动画(default:no)',
