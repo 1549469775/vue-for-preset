@@ -1,5 +1,4 @@
 import request from '@http/index.js'
-import config from '@config'
 import router from '@router';
 export default {
   namespaced: true,
@@ -46,7 +45,7 @@ export default {
     }) {
       return new Promise((resolve) => {
         commit("setToken", "")
-        config.loginPath && (router.push(config.loginPath))
+        router.push('/')
         resolve()
       })
     }

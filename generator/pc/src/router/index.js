@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from "@store"
-import config from "@config"
 Vue.use(Router)
 import route from "./route.js";
 const router = new Router(route)
@@ -17,7 +16,7 @@ router.options.routes.forEach(route => {
 router.beforeResolve((to, from, next) => {
   if (!store.getters.token && to.meta.auth) {
     console.log("请先登录")
-    config.loginPath && (next(config.loginPath))
+    next('/')
     return
   } else {
     next()

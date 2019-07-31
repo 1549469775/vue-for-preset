@@ -1,18 +1,26 @@
 <template>
   <div id="app">
-    <transition :name="animtion">
+    <%_ if (options['translate'] === 'yes') { _%>
+      <transition :name="animtion">
+        <keep-alive :include="cachePage">
+          <router-view :key="key" />
+        </keep-alive>
+      </transition>
+    <%_ } else { _%>
       <keep-alive :include="cachePage">
         <router-view :key="key" />
       </keep-alive>
-    </transition>
+    <%_ } _%>
   </div>
 </template>
 <script>
   export default {
     computed: {
-      animtion() {
-        return this.$store.state.page.states
-      },
+       <%_ if (options['translate'] === 'yes') { _%>
+           animtion() {
+              return this.$store.state.page.states
+            },
+        <%_ }_%>
       key() {
         return this.$route.fullPath
       },
@@ -46,7 +54,8 @@
     height: 100%;
     border: hidden;
   }
-  /* 页面切换的滑动效果 */
+<%_ if (options['translate'] === 'yes') { _%>
+    /* 页面切换的滑动效果 */
   .turn-on-enter {
     transform: translate3d(100%, 0, 0);
   }
@@ -70,4 +79,6 @@
   .turn-off-leave-active {
     z-index: 2;
   }
+<%_ } _%>
+  
 </style>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import store from "@store"
 import qs from 'qs'
+import config from '@config'
 
 export function request_(type = 'GET', url, data = {}) {
   var __data = {}
@@ -11,8 +12,13 @@ export function request_(type = 'GET', url, data = {}) {
     __data.data = qs.stringify(data)
   }
   return new Promise((resolve, reject) => {
+    var reg=/^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
+    var realUrl=url;
+    if(!reg.test(url)){
+      realUrl=config.BASEURL+url;
+    }
     axios({
-      url: url,
+      url: realUrl,
       method: type,
       ...__data,
       responseType: 'json'

@@ -35,3 +35,15 @@ function IsPC() {
   }
   return flag;
 }
+
+// JS函数重载
+function addMethod(object, name, fn){
+  var old = object[ name ];
+  object[ name ] = function(){
+    // fn.length表示它又多少个形参
+      if ( fn.length == arguments.length )
+          return fn.apply( this, arguments );
+      else if ( typeof old == 'function' )
+          return old.apply( this, arguments );
+  }
+}

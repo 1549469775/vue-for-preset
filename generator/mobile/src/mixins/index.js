@@ -1,1 +1,3 @@
-import "./back.js"
+<%_ if (options['translate'] === 'yes') { _%>
+    import "./back.js"
+<%_ } _%>
