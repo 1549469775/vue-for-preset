@@ -54,30 +54,38 @@ module.exports = {
     // 启用 CSS modules for all css / pre-processor files.
     modules: false,
   },
-  configureWebpack: () => ({
-    resolve: {
-      alias: {
-        '@': resolve('src'),
-        '@http': resolve('src/http'),
-        '@config': resolve('src/config/config.js'),
-        '@assets': resolve('src/assets'),
-        '@components': resolve('src/components'),
-        '@store': resolve('src/store'),
-        '@router': resolve('src/router'),
-        '@views': resolve('src/views'),
-        '@vendor': resolve('src/vendor'),
-        '@images': resolve('src/assets/images'),
-        '@mixins': resolve('src/mixins'),
-        '@directive': resolve('src/directive'),
-        '@filter': resolve('src/filter'),
-        '@utils': resolve('src/utils'),
-      }
-    },
-    plugins: [
-      new webpack.ProvidePlugin({
-        _: "lodash",
-        $: "jquery"
-      })
-    ]
-  })
+  configureWebpack: (config) => {
+    if (process.env.NODE_ENV === 'production') {
+      config.optimization.minimizer[0].options.terserOptions.compress.warnings = false
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_debugger = true
+      config.optimization.minimizer[0].options.terserOptions.compress.pure_funcs = ['console.log']
+    }
+    return {
+      resolve: {
+        alias: {
+          '@': resolve('src'),
+          '@http': resolve('src/http'),
+          '@config': resolve('src/config/config.js'),
+          '@assets': resolve('src/assets'),
+          '@components': resolve('src/components'),
+          '@store': resolve('src/store'),
+          '@router': resolve('src/router'),
+          '@views': resolve('src/views'),
+          '@vendor': resolve('src/vendor'),
+          '@images': resolve('src/assets/images'),
+          '@mixins': resolve('src/mixins'),
+          '@directive': resolve('src/directive'),
+          '@filter': resolve('src/filter'),
+          '@utils': resolve('src/utils'),
+        }
+      },
+      plugins: [
+        new webpack.ProvidePlugin({
+          _: "lodash",
+          $: "jquery"
+        })
+      ]
+    }
+  }
 }
