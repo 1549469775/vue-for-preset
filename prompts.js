@@ -1,3 +1,5 @@
+// 手机
+
 module.exports = [{
   type: 'string',
   name: 'BASE_URL',
