@@ -57,7 +57,7 @@ module.exports = {
       {
         type: 'add',
         path: `src/views/${name}/style.scss`,
-        templateFile: 'plop-templates/style/index.hbs',
+        templateFile: 'plop-templates/view/style.hbs',
         data: {
           name: name,
           templateType: 'view',

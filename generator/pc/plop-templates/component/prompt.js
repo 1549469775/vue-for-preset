@@ -54,7 +54,7 @@ module.exports = {
       {
         type: 'add',
         path: `src/components/${name}/style.scss`,
-        templateFile: 'plop-templates/comp-style/index.hbs',
+        templateFile: 'plop-templates/component/style.hbs',
         data: {
           name: name,
           templateType: 'component'

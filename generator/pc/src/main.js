@@ -14,6 +14,7 @@ import '@mixins/index.js'
 import '@directive/index.js'
 import '@filter/index.js'
 import '@components/global/index.js'
+import '@components/plugins/index.js'
   <%_ if (options['ui-framework'] === 'element-ui') { _%>
     import '@vendor/element';
   <%_ } else if (options['ui-framework'] === 'iview') { _%>
