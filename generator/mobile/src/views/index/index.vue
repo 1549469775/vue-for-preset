@@ -1,28 +1,3 @@
-<script>
-  export default {
-    name: 'index',
-    mixins: [],
-    components: {
-
-    },
-    data() {
-      return {
-
-      };
-    },
-    computed: {},
-    watch: {},
-    created() {
-
-    },
-    mounted() {
-    },
-    destroyed() {
-    },
-    methods: {
-    }
-  }
-</script>
 
 <template>
   <div class="page-index">
@@ -30,6 +5,7 @@
   </div>
 </template>
 
+<script src='./index.js'></script>
 <style lang="scss" scoped>
   @import "./style.scss";
 </style>

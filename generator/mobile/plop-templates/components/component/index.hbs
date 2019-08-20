@@ -1,0 +1,17 @@
+
+{{#if template}}
+<template>
+  <div class="comp-{{ name }}">
+    {{ name }} 组件
+  </div>
+</template>
+{{/if}}
+{{#if script}}
+<script src="./index.js"></script>
+{{/if}}
+
+{{#if style}}
+<style lang="scss" scoped>
+  @import "./style.scss";
+</style>
+{{/if}}

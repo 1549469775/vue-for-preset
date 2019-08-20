@@ -1,6 +1,6 @@
 const {
   notEmpty
-} = require('../utils.js');
+} = require('../../utils.js');
 
 module.exports = {
   description: 'generate a view',
@@ -43,27 +43,38 @@ module.exports = {
   ],
   actions: (data) => {
     const name = '{{name}}';
-    const actions = [{
-        type: 'add',
-        path: `src/views/${name}/index.vue`,
-        templateFile: 'plop-templates/view/index.hbs',
-        data: {
-          name: name,
-          template: data.blocks.includes('template'),
-          script: data.blocks.includes('script'),
-          style: data.blocks.includes('style'),
-        },
+    var actions = [];
+    data.blocks.includes('template')&&actions.push({
+      type: 'add',
+      path: `src/views/${name}/index.vue`,
+      templateFile: 'plop-templates/views/view/index.hbs',
+      data: {
+        name: name,
+        template: data.blocks.includes('template'),
+        script: data.blocks.includes('script'),
+        style: data.blocks.includes('style'),
       },
-      {
-        type: 'add',
-        path: `src/views/${name}/style.scss`,
-        templateFile: 'plop-templates/view/style.hbs',
-        data: {
-          name: name,
-          templateType: 'view',
-        },
+    })
+    
+    data.blocks.includes('style')&&actions.push({
+      type: 'add',
+      path: `src/views/${name}/style.scss`,
+      templateFile: 'plop-templates/views/style/index.hbs',
+      data: {
+        name: name,
+        templateType: 'view',
       },
-    ];
+    })
+
+    data.blocks.includes('script')&&actions.push({
+      type: 'add',
+      path: `src/views/${name}/index.js`,
+      templateFile: 'plop-templates/views/js/index.hbs',
+      data: {
+        name: name,
+        templateType: 'view',
+      },
+    })
 
     return actions;
   },

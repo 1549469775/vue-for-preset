@@ -6,7 +6,7 @@ const github__page = [{
     cache: false,
     auth: false
   },
-  component: () => import('@views/index/index')
+  component: () => import('@views/index/index.vue')
 }]
 
 // import llroute from "./login-route"

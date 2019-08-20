@@ -1,5 +1,3 @@
-{{#if script}}
-<script>
   const mixin = {
     props: {},
     data() {
@@ -21,19 +19,3 @@
     },
     methods: {}
   };
-</script>
-{{/if}}
-{{#if template}}
-<template>
-  <div class="comp-{{ name }}">
-    {{ name }} 组件
-  </div>
-</template>
-{{/if}}
-
-
-{{#if style}}
-<style lang="scss" scoped>
-  @import "./style.scss";
-</style>
-{{/if}}
