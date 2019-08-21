@@ -12,7 +12,7 @@ vue create --preset direct:https://github.com/1549469775/vue-for-preset.git vue-
 
 V1.0.0
 移动端模板引擎雏形
-PC端模板雏形
+PC端模板雏形（这个感觉没啥用，一般不用做PC端）
 
 自适应
 视频站
