@@ -1,7 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
-const CompressionPlugin = require("compression-webpack-plugin");
-
+const webpack = require('webpack')
 const resolve = (dir) => {
   return path.join(__dirname, './', dir);
 };
@@ -62,6 +60,7 @@ module.exports = {
       config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
       config.optimization.minimizer[0].options.terserOptions.compress.drop_debugger = true
       config.optimization.minimizer[0].options.terserOptions.compress.pure_funcs = ['console.log'];
+      config.plugin('webpack-bundle-analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin);
     }
     return {
       resolve: {
@@ -89,19 +88,5 @@ module.exports = {
         })
       ]
     }
-  },
-  chainWebpack: config => {
-    if (process.env.NODE_ENV === 'production') {
-      config
-        .plugin('webpack-bundle-analyzer')
-        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin);
-      config
-        .plugin('webpack-bundle-analyzer')
-        .use(CompressionPlugin,[{
-          test:/\.js$|\.html$|\.css/,
-          threshold:10240,
-          deleteOriginalAssets:false
-        }])
-    } 
   }
 }

@@ -33,8 +33,6 @@ module.exports = (api, options, rootOptions) => {
       "archiver": "^3.0.3",
       "chalk": "^2.4.2",
       "tasksfile": "^5.1.0",
-      "webpack-bundle-analyzer": "^3.4.1",
-      "compression-webpack-plugin": "^3.0.0",
     },
   });
   // 支持采用TinyPNG node.js API 进行在线压缩.jpg或.png格式图片，并且转换Webp格式文件

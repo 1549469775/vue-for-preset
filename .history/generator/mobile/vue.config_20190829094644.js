@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const CompressionPlugin = require("compression-webpack-plugin");
-
 const resolve = (dir) => {
   return path.join(__dirname, './', dir);
 };

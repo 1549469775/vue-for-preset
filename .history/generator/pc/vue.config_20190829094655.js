@@ -1,7 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
-const CompressionPlugin = require("compression-webpack-plugin");
-
+const webpack = require('webpack')
 const resolve = (dir) => {
   return path.join(__dirname, './', dir);
 };
@@ -91,7 +89,7 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    if (process.env.NODE_ENV === 'production') {
+    if (isProd) {
       config
         .plugin('webpack-bundle-analyzer')
         .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin);
