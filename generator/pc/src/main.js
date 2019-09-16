@@ -5,6 +5,10 @@ import App from './App.vue';
 import router from '@router';
 // vuex分离
 import store from '@store'
+
+if (process.env.NODE_ENV==='development') {
+  import './mock/index.js';
+}
 // 网络请求分离
 import request from '@http/index.js'
 Vue.prototype.$request = request;
