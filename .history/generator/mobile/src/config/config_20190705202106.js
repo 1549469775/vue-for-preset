@@ -9,5 +9,5 @@ export default {
   // Token失效之后跳转过去的页面
   loginPath: process.env.VUE_APP_LOGINPATH,
   // 网络请求基础地址
-  BASEURL: process.env.VUE_APP_BASEURL,
+  BASEURL: process.env.VUE_APP_BASEURL
 }

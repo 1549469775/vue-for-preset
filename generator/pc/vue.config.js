@@ -13,7 +13,7 @@ const isProd = () => {
 
 
 let plugins = [];
-if (isProd) {
+if (isProd()) {
   plugins = [
     new BundleAnalyzerPlugin(),
     new CompressionPlugin({

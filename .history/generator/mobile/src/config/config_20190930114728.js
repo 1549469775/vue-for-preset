@@ -10,4 +10,5 @@ export default {
   loginPath: process.env.VUE_APP_LOGINPATH,
   // 网络请求基础地址
   BASEURL: process.env.VUE_APP_BASEURL,
+  key:'cJ1@iH2@xD1$fJ5@cG2@pB1(bC1^'
 }

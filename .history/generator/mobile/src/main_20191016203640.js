@@ -1,23 +1,10 @@
-  < % _
-  if (options['application'] === 'mobile') {
-    _ % >
-      import 'lib-flexible'; <
-    %
-    _
-  }
-  _ % >
-    <
-    %
-    _
-  if (options['mobile-ui'] === 'vant') {
-    _ % >
-      import '@vendor/vant'; //该库已经设置为动态加载了
-    <
-    %
-    _
-  }
-  _ % >
-
+  <%_ if (options['application'] === 'mobile') { _%>
+      import 'lib-flexible'; 
+  <%_ } _%>
+  <%_ if (options['mobile-ui'] === 'vant') { _%>
+    import '@vendor/vant';//该库已经设置为动态加载了
+  <%_ } _%>
+  
     import "normalize.css"
   import Vue from 'vue';
   import App from './App.vue';
@@ -26,8 +13,8 @@
   // vuex分离
   import store from '@store'
 
-  if (process.env.NODE_ENV === 'development') {
-    import './mock/index.js';
+  if (process.env.NODE_ENV==='development') {
+    require('./mock/index.js');
   }
 
   // 网络请求分离

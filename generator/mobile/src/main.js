@@ -14,7 +14,7 @@
   import store from '@store'
 
   if (process.env.NODE_ENV==='development') {
-    import './mock/index.js';
+    require('./mock/index.js');
   }
 
   // 网络请求分离

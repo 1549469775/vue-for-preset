@@ -7,7 +7,7 @@ import router from '@router';
 import store from '@store'
 
 if (process.env.NODE_ENV==='development') {
-  require('./mock/index.js');
+  import './mock/index.js';
 }
 // 网络请求分离
 import request from '@http/index.js'

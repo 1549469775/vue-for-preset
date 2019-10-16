@@ -1,5 +1,8 @@
 const path = require('path');
-const webpack = require('webpack')
+const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const CompressionPlugin = require("compression-webpack-plugin");
+
 const resolve = (dir) => {
   return path.join(__dirname, './', dir);
 };
@@ -7,6 +10,21 @@ const resolve = (dir) => {
 const isProd = () => {
   return process.env.NODE_ENV === 'production';
 };
+
+
+let plugins = [];
+if (isProd()) {
+  plugins = [
+    new BundleAnalyzerPlugin(),
+    new CompressionPlugin({
+      test: /\.js$|\.html$|\.css/,
+      threshold: 10240,
+      deleteOriginalAssets: false
+    })
+  ]
+} else {
+  plugins = []
+}
 
 
 module.exports = {
@@ -84,22 +102,9 @@ module.exports = {
         new webpack.ProvidePlugin({
           _: "lodash",
           $: "jquery"
-        })
+        }),
+        ...plugins
       ]
     }
-  },
-  chainWebpack: config => {
-    if (isProd) {
-      config
-        .plugin('webpack-bundle-analyzer')
-        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin);
-      config
-        .plugin('webpack-bundle-analyzer')
-        .use(CompressionPlugin,[{
-          test:/\.js$|\.html$|\.css/,
-          threshold:10240,
-          deleteOriginalAssets:false
-        }])
-    } 
   }
 }
