@@ -15,10 +15,8 @@ module.exports = (api, options, rootOptions) => {
       "vuex": "^3.1.1"
     },
     devDependencies: {
-      // v4版本会是4.0.0，因此注释掉就行了
       // "@vue/cli-plugin-babel": "^3.8.0",
       "@vue/cli-plugin-eslint": "^3.8.0",
-      // v4版本会是4.0.0，因此注释掉就行了
       // "@vue/cli-service": "^3.8.0",
       "babel-eslint": "^10.0.1",
       "eslint": "^5.16.0",
@@ -58,7 +56,7 @@ module.exports = (api, options, rootOptions) => {
     },
     babel: {
       presets: [
-        // v4版本这东西会重复，同时会自动插入V4版本的预设
+        // v4版本这东西会重复
         // '@vue/app'
       ]
     }
