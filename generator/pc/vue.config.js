@@ -70,7 +70,8 @@ module.exports = {
 	  <%_ } _%>
     },
     // 启用 CSS modules for all css / pre-processor files.
-    modules: false,
+    //modules: false, v3版的取消了
+	requireModuleExtension:false,
   },
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === 'production') {
