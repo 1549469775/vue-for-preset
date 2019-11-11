@@ -12,10 +12,10 @@ export function request_(type = 'GET', url, data = {}) {
     __data.data = qs.stringify(data)
   }
   return new Promise((resolve, reject) => {
-    var reg = /^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~/])+$/;
-    var realUrl = url;
-    if (!reg.test(url)) {
-      realUrl = config.BASEURL + url;
+    var reg=/^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
+    var realUrl=url;
+    if(!reg.test(url)){
+      realUrl=config.BASEURL+url;
     }
     axios({
       url: realUrl,
