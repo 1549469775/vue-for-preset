@@ -55,7 +55,7 @@ let VueError = {
      * } error 
      * @param {*} vm 
      */
-    console.log('VueErrorInstallSuc');
+    console.log(options);
     Vue.config.errorHandler = errorHandler;
     Vue.mixin({
       beforeCreate() {
